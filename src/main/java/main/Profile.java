@@ -5,6 +5,9 @@ import appearancetype.ColorType;
 import figure.Figure;
 
 public class Profile {
+    public static int getValue(){
+        return 0;
+    }
     private ColorType colorType;
     private Figure figure;
     private Clothes clothes;
