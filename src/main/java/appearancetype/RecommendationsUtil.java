@@ -1,13 +1,16 @@
 package appearancetype;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import main.Profile;
-import main.StartMainRecommend;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public final class RecommendationsUtil {
@@ -21,9 +24,11 @@ public final class RecommendationsUtil {
     public static String getContentLine(File file) throws IOException {
         return Files.readString(Paths.get(file.getAbsolutePath()));
     }
-    public static Profile getContentFromJson(File file) throws IOException {
-        Gson gson = new Gson();
+    public static List<Profile> getContentFromJson(File file) throws IOException {
+        Gson gson = new GsonBuilder().registerTypeAdapter(ColorType.class, new ColorTypeDeserializer())
+                .create();
         String fileCont = getContentLine(file);
-        return gson.fromJson(fileCont, Profile.class);
+        Type listOfMyClassObject = new TypeToken<ArrayList<Profile>>() {}.getType();
+        return gson.fromJson(fileCont, listOfMyClassObject);
     }
 }

@@ -5,16 +5,30 @@ import appearancetype.ColorType;
 import figure.Figure;
 
 public class Profile {
-    public static int getValue(){
-        return 0;
-    }
     private ColorType colorType;
     private Figure figure;
     private Clothes clothes;
 
-    public Clothes getClothes() { return clothes; }
+    public static int getValue() {
+        return 0;
+    }
 
-    public void setClothes(Clothes clothes) { this.clothes = clothes; }
+    @Override
+    public String toString() {
+        return "Profile{" +
+                "colorType=" + colorType +
+                ", figure=" + figure +
+                ", clothes=" + clothes +
+                '}';
+    }
+
+    public Clothes getClothes() {
+        return clothes;
+    }
+
+    public void setClothes(Clothes clothes) {
+        this.clothes = clothes;
+    }
 
     public ColorType getColorType() {
         return colorType;

@@ -1,6 +1,6 @@
 package main;
 
-import appearancetype.ColorDeserializer;
+import appearancetype.ColorTypeDeserializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -13,7 +13,7 @@ import static appearancetype.RecommendationsUtil.getContent;
 import static appearancetype.RecommendationsUtil.getContentFromJson;
 
 public class FileMainTest {
-    Gson gson = new GsonBuilder().registerTypeAdapter(Color.class, new ColorDeserializer())
+    Gson gson = new GsonBuilder().registerTypeAdapter(Color.class, new ColorTypeDeserializer())
             .create();
     String profileAsString = "{\"recommend\":\"myrecommend\", \"color\":\"red\"}";
     Profile profile = gson.fromJson(profileAsString, Profile.class);
@@ -25,8 +25,8 @@ public class FileMainTest {
             String[] lineAr = line.split(":");
             System.out.println(lineAr[0]);
         }
-        Profile profile = getContentFromJson(new File("Profile.json"));
-        System.out.println(profile.getFigure());
+        List<Profile> profile = getContentFromJson(new File("Profile.json"));
+        System.out.println(profile);
     }
-		System.out.println(profile);
+
 }
