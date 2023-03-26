@@ -18,7 +18,7 @@ public enum Figure implements HaveName {
 
     }
 
-    public static Figure getById2(String id) throws Exception {
+    public static Figure getById(String id) throws Exception {
         for (Figure figure : values()) {
             if (figure.id.equalsIgnoreCase(id)) {
                 return figure;

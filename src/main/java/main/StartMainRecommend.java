@@ -4,10 +4,8 @@ import appearancetype.ColorType;
 import figure.Figure;
 
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 public class StartMainRecommend {
     public static void main(String[] args) {
@@ -35,7 +33,7 @@ public class StartMainRecommend {
             profileRecommend2.setProfile(profileTest2);
 
 
-            RecommendationFunction recommendationFunction = new RecommendationFunction();
+            DefaultRecommendationFunction recommendationFunction = new DefaultRecommendationFunction();
             double result = recommendationFunction.getSim(profileTest, profile1);
             System.out.println(result);
             Collection<RecomendResults> results = recommendationFunction.getSim(profileTest, Arrays.asList(profileRecommend1, profileRecommend2));
