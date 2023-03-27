@@ -3,6 +3,7 @@ package appearancetype;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import figure.ClothesDeserializer;
 import figure.Figure;
 import main.Profile;
 
@@ -28,6 +29,7 @@ public final class RecommendationsUtil {
     public static List<Profile> getContentFromJson(File file) throws IOException {
         Gson gson = new GsonBuilder().registerTypeAdapter(ColorType.class, new ColorTypeDeserializer())
                 .registerTypeAdapter(Figure.class, new FigureDeserializer())
+                .registerTypeAdapter(Clothes.class, new ClothesDeserializer())
                 .create();
         String fileCont = getContentLine(file);
         Type listOfMyClassObject = new TypeToken<ArrayList<Profile>>() {}.getType();
