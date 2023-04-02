@@ -3,8 +3,8 @@ package appearancetype;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import figure.ClothesDeserializer;
 import figure.Figure;
+import figure.FigureDeserializer;
 import main.Profile;
 
 import java.io.File;

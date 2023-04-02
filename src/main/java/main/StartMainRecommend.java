@@ -12,7 +12,7 @@ public class StartMainRecommend {
         try {
             Profile profileTest = new Profile();
             profileTest.setColorType(ColorType.getById("WINTER")); // заменил setFigure
-            ColorType colorTypeWinter = ColorType.getById("WITER");    // замена
+            ColorType colorTypeWinter = ColorType.getById("WInTER");    // замена
 
 
             ProfileRecommend profileRecommend1 = new ProfileRecommend();
@@ -33,10 +33,10 @@ public class StartMainRecommend {
             profileRecommend2.setProfile(profileTest2);
 
 
-            DefaultRecommendationFunction recommendationFunction = new DefaultRecommendationFunction();
+            RecommendationFunction recommendationFunction = new DefaultRecommendationFunction();
             double result = recommendationFunction.getSim(profileTest, profile1);
             System.out.println(result);
-            Collection<RecomendResults> results = recommendationFunction.getSim(profileTest, Arrays.asList(profileRecommend1, profileRecommend2));
+            Collection<RecommendResults> results = recommendationFunction.getSim(profileTest, Arrays.asList(profileRecommend1, profileRecommend2));
             System.out.println(results);
 
         } catch (Exception exception){

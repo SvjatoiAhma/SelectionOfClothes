@@ -1,4 +1,4 @@
-package appearancetype;
+package figure;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

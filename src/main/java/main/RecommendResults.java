@@ -1,6 +1,6 @@
 package main;
 
-public class RecomendResults {
+public class RecommendResults {
     private double simCoef;
     private String recommend;
 

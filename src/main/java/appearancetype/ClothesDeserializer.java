@@ -1,4 +1,4 @@
-package figure;
+package appearancetype;
 
 import appearancetype.Clothes;
 import appearancetype.ColorType;

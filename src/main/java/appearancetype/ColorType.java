@@ -17,13 +17,13 @@ public enum ColorType implements HaveName {
         this.name = name;
     }
 
-    public static ColorType getById(String id) throws Exception {
+    public static ColorType getById(String id) throws ColorTypeException {
         for (ColorType colorType : values()) {
             if (colorType.id.equalsIgnoreCase(id)) {
                 return colorType;
             }
         }
-        throw new Exception(" id " + id + " не найден. ");
+        throw new ColorTypeException(" id " + id + " не найден. ");
     }
 
     @Override
